@@ -33,7 +33,10 @@ public class ApiExceptionV2Controller {
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler
     public ErrorResult exHandle(Exception e) {
-        log.error("[exceptionHandle] ex", e); return new ErrorResult("EX", "내부 오류");
+
+        log.error("[exceptionHandle] ex", e);
+
+        return new ErrorResult("EX", "내부 오류");
     }
 
     @GetMapping("/api2/members/{id}")
